@@ -707,6 +707,49 @@ exit 0
                 py_calls = f.read()
             self.assertIn("/scripts/setup_auth.py --repo tester/sweaty-online", py_calls)
 
+    def test_bootstrap_defaults_to_online_mode(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            fake_bin, git_log, py_log = self._make_fake_bin(tmpdir)
+            run_dir = os.path.join(tmpdir, "runner")
+            os.makedirs(run_dir, exist_ok=True)
+
+            gh_log = os.path.join(tmpdir, "gh.log")
+            env = os.environ.copy()
+            env["PATH"] = f"{fake_bin}:{env['PATH']}"
+            env["FAKE_GIT_LOG"] = git_log
+            env["FAKE_GH_LOG"] = gh_log
+            env["FAKE_CURL_LOG"] = os.path.join(tmpdir, "curl.log")
+            env["FAKE_TAR_LOG"] = os.path.join(tmpdir, "tar.log")
+            env["FAKE_PY_LOG"] = py_log
+            env["FAKE_REPO_VIEW_FAIL_FOR"] = "tester/git-sweaty"
+
+            proc = subprocess.run(
+                ["bash", BOOTSTRAP_PATH],
+                input="\nn\ntester/default-online\n",
+                text=True,
+                capture_output=True,
+                cwd=run_dir,
+                env=env,
+                check=False,
+            )
+            self.assertEqual(proc.returncode, 0, msg=f"{proc.stdout}\n{proc.stderr}")
+
+            with open(git_log, "r", encoding="utf-8") as f:
+                git_calls = f.read()
+            self.assertFalse(
+                any(line.startswith("clone ") for line in git_calls.splitlines()),
+                msg=git_calls,
+            )
+
+            with open(gh_log, "r", encoding="utf-8") as f:
+                gh_calls = f.read()
+            self.assertNotIn("repo fork aspain/git-sweaty", gh_calls)
+            self.assertIn("repo view tester/default-online", gh_calls)
+
+            with open(py_log, "r", encoding="utf-8") as f:
+                py_calls = f.read()
+            self.assertIn("/scripts/setup_auth.py --repo tester/default-online", py_calls)
+
     def test_bootstrap_online_mode_without_fork_uses_prompted_repo(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             fake_bin, _, py_log = self._make_fake_bin(tmpdir)

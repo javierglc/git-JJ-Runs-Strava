@@ -281,6 +281,18 @@ class SetupAuthDispatchTests(unittest.TestCase):
         self.assertTrue(requested)
         self.assertIsNone(domain)
 
+    def test_prompt_custom_pages_domain_defaults_to_no(self) -> None:
+        with (
+            mock.patch("setup_auth._get_pages_custom_domain", return_value="strava.example.com"),
+            mock.patch("setup_auth._prompt_choice", side_effect=["no", "no"]) as prompt_mock,
+        ):
+            setup_auth._prompt_custom_pages_domain("owner/repo")
+
+        self.assertGreaterEqual(len(prompt_mock.call_args_list), 1)
+        first_call = prompt_mock.call_args_list[0]
+        self.assertEqual(first_call.args[0], "Use a custom dashboard domain? [y/n] (default: n): ")
+        self.assertEqual(first_call.kwargs["default"], "n")
+
     def test_resolve_strava_profile_url_non_interactive_uses_existing_variable(self) -> None:
         args = Namespace(strava_profile_url=None)
         with (
@@ -523,6 +535,14 @@ class SetupAuthMainFlowTests(unittest.TestCase):
             mock.call(
                 "DASHBOARD_STRAVA_PROFILE_URL",
                 "https://www.strava.com/athletes/123",
+                "owner/repo",
+            ),
+            set_variable_mock.mock_calls,
+        )
+        self.assertIn(
+            mock.call(
+                "DASHBOARD_REPO",
+                "owner/repo",
                 "owner/repo",
             ),
             set_variable_mock.mock_calls,

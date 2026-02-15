@@ -40,8 +40,11 @@ const heatmaps = document.getElementById("heatmaps");
 const tooltip = document.getElementById("tooltip");
 const summary = document.getElementById("summary");
 const updated = document.getElementById("updated");
+const headerMeta = document.getElementById("headerMeta");
+const headerLinks = document.querySelector(".header-links");
 const repoLink = document.querySelector(".repo-link");
 const stravaProfileLink = document.querySelector(".strava-profile-link");
+const footerHostedLink = document.getElementById("footerHostedLink");
 const dashboardTitle = document.getElementById("dashboardTitle");
 const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 const BREAKPOINTS = Object.freeze({
@@ -244,6 +247,15 @@ function resolveHeaderRepoLink(loc, fallbackRepo) {
   return null;
 }
 
+function resolveFooterHostedLink(loc, fallbackRepo) {
+  const inferred = resolveGitHubRepo(loc, fallbackRepo);
+  if (!inferred) return null;
+  return {
+    href: `https://github.com/${inferred.owner}/${inferred.repo}`,
+    text: `${inferred.owner}/${inferred.repo}`,
+  };
+}
+
 function syncRepoLink(fallbackRepo) {
   if (!repoLink) return;
   const resolved = resolveHeaderRepoLink(
@@ -253,6 +265,40 @@ function syncRepoLink(fallbackRepo) {
   if (!resolved) return;
   repoLink.href = resolved.href;
   repoLink.textContent = resolved.text;
+}
+
+function syncFooterHostedLink(fallbackRepo) {
+  if (!footerHostedLink) return;
+  const resolved = resolveFooterHostedLink(
+    window.location,
+    fallbackRepo
+      || repoLink?.getAttribute("href")
+      || repoLink?.textContent
+      || footerHostedLink.getAttribute("href")
+      || footerHostedLink.textContent,
+  );
+  if (!resolved) return;
+  footerHostedLink.href = resolved.href;
+  footerHostedLink.textContent = resolved.text;
+}
+
+function syncDesktopHeaderLinkPlacement() {
+  if (!repoLink || !headerMeta || !headerLinks) return;
+  const shouldStackRepoOnLeft = Boolean(
+    isDesktopLikeViewport() && stravaProfileLink && !stravaProfileLink.hidden,
+  );
+
+  if (shouldStackRepoOnLeft) {
+    if (repoLink.parentElement !== headerMeta) {
+      const insertBeforeNode = updated && updated.parentElement === headerMeta ? updated : null;
+      headerMeta.insertBefore(repoLink, insertBeforeNode);
+    }
+    return;
+  }
+
+  if (repoLink.parentElement !== headerLinks) {
+    headerLinks.insertBefore(repoLink, headerLinks.firstChild);
+  }
 }
 
 function parseStravaProfileUrl(value) {
@@ -290,11 +336,13 @@ function syncStravaProfileLink(profileUrl) {
   const parsed = parseStravaProfileUrl(profileUrl);
   if (!parsed) {
     stravaProfileLink.hidden = true;
+    syncDesktopHeaderLinkPlacement();
     return;
   }
   stravaProfileLink.href = parsed.href;
   stravaProfileLink.textContent = parsed.label;
   stravaProfileLink.hidden = false;
+  syncDesktopHeaderLinkPlacement();
 }
 
 function providerDisplayName(source) {
@@ -2470,7 +2518,9 @@ function renderLoadError(error) {
 
 async function init() {
   syncRepoLink();
+  syncFooterHostedLink();
   syncStravaProfileLink();
+  syncDesktopHeaderLinkPlacement();
   const resp = await fetch("data.json");
   if (!resp.ok) {
     throw new Error(`Failed to load data.json (${resp.status})`);
@@ -2480,6 +2530,12 @@ async function init() {
     throw new Error("Invalid dashboard data format.");
   }
   syncRepoLink(
+    payload.repo
+    || payload.repo_slug
+    || payload.repo_url
+    || payload.repository,
+  );
+  syncFooterHostedLink(
     payload.repo
     || payload.repo_slug
     || payload.repo_url
@@ -3578,6 +3634,7 @@ async function init() {
       }
       lastViewportWidth = width;
       lastIsNarrowLayout = isNarrowLayout;
+      syncDesktopHeaderLinkPlacement();
       resetPersistentSideStatSizing();
       update();
     }, 150);

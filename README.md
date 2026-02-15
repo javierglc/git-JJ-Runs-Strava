@@ -24,7 +24,7 @@ This command will guide you through:
 - `gh auth login` (if needed)
 - choosing setup mode:
   - `1` local mode (fork + clone + local setup)
-  - `2` online mode (no local clone; GitHub/terminal setup only)
+  - `2` online mode (no local clone; GitHub/terminal setup only, default)
 - forking (including optional custom fork name) and cloning for local mode
 - running interactive setup
 

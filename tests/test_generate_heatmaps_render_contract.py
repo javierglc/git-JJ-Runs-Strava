@@ -128,6 +128,16 @@ class GenerateHeatmapsRenderContractTests(unittest.TestCase):
 
         self.assertEqual(captured["payload"].get("repo"), "owner/repo")
 
+    def test_repo_slug_prefers_dashboard_repo_env(self) -> None:
+        with mock.patch.dict(
+            "os.environ",
+            {"DASHBOARD_REPO": "owner/custom-fork", "GITHUB_REPOSITORY": "owner/git-sweaty"},
+            clear=False,
+        ):
+            repo_slug = generate_heatmaps._repo_slug_from_git()
+
+        self.assertEqual(repo_slug, "owner/custom-fork")
+
     def test_generate_includes_strava_profile_url_when_configured(self) -> None:
         captured = {}
 

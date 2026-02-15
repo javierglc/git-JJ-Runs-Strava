@@ -738,9 +738,9 @@ def _prompt_custom_pages_domain(repo: str) -> Tuple[bool, Optional[str]]:
     existing = _get_pages_custom_domain(repo)
 
     print("\nOptional: set a custom dashboard domain (example: strava.example.com).")
-    default_choice = "y" if existing else "n"
+    default_choice = "n"
     use_custom = _prompt_choice(
-        "Use a custom dashboard domain? [y/n]: ",
+        "Use a custom dashboard domain? [y/n] (default: n): ",
         {"y": "yes", "yes": "yes", "n": "no", "no": "no"},
         default=default_choice,
         invalid_message="Please enter 'y' or 'n'.",
@@ -1774,6 +1774,7 @@ def main() -> int:
     print("Updating repository variables via gh...")
     variable_pairs = [
         ("DASHBOARD_SOURCE", source),
+        ("DASHBOARD_REPO", repo),
         ("DASHBOARD_DISTANCE_UNIT", distance_unit),
         ("DASHBOARD_ELEVATION_UNIT", elevation_unit),
     ]
@@ -1796,6 +1797,7 @@ def main() -> int:
             detail=f"Could not store one or more dashboard variables automatically: {variable_errors[0]}",
             manual_help=(
                 f"Open {variables_settings_url} and set DASHBOARD_SOURCE={source}, "
+                f"DASHBOARD_REPO={repo}, "
                 f"DASHBOARD_DISTANCE_UNIT={distance_unit} "
                 f"and DASHBOARD_ELEVATION_UNIT={elevation_unit}"
                 + (
@@ -1821,7 +1823,7 @@ def main() -> int:
             status=STATUS_OK,
             detail=(
                 "Saved DASHBOARD_SOURCE="
-                f"{source}, DASHBOARD_DISTANCE_UNIT={distance_unit}, "
+                f"{source}, DASHBOARD_REPO={repo}, DASHBOARD_DISTANCE_UNIT={distance_unit}, "
                 f"DASHBOARD_ELEVATION_UNIT={elevation_unit}"
                 f"{profile_suffix}."
             ),
@@ -1840,7 +1842,7 @@ def main() -> int:
         )
         print(
             "Variables set: "
-            f"DASHBOARD_SOURCE={source}, DASHBOARD_DISTANCE_UNIT={distance_unit}, "
+            f"DASHBOARD_SOURCE={source}, DASHBOARD_REPO={repo}, DASHBOARD_DISTANCE_UNIT={distance_unit}, "
             f"DASHBOARD_ELEVATION_UNIT={elevation_unit}"
             f"{profile_suffix}"
         )

@@ -95,15 +95,15 @@ prompt_setup_mode() {
   printf '%s\n' "  2) Online mode (no local clone; configure GitHub directly)" >&2
 
   while true; do
-    read -r -p "Select option [1/2] (default: 1): " choice || return 1
+    read -r -p "Select option [1/2] (default: 2): " choice || return 1
     choice="$(trim_whitespace "$choice")"
     choice="$(printf '%s' "$choice" | tr '[:upper:]' '[:lower:]')"
     case "$choice" in
-      ""|1|local|local\ mode)
+      1|local|local\ mode)
         printf '%s\n' "local"
         return 0
         ;;
-      2|online|online\ mode)
+      ""|2|online|online\ mode)
         printf '%s\n' "online"
         return 0
         ;;
