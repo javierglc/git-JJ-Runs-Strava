@@ -40,6 +40,11 @@ from garmin_token_store import (
     token_store_ready,
     write_token_store_bytes,
 )
+from repo_helpers import (
+    normalize_dashboard_url as _shared_normalize_dashboard_url,
+    normalize_repo_slug as _shared_normalize_repo_slug,
+    pages_url_from_slug as _shared_pages_url_from_slug,
+)
 
 if sys.version_info < (3, 9):
     raise SystemExit(
@@ -69,15 +74,6 @@ UNIT_PRESETS = {
 }
 DEFAULT_WEEK_START = "sunday"
 WEEK_START_CHOICES = {"sunday", "monday"}
-REPO_URL_RE = re.compile(
-    r"^https?://github\.com/(?P<owner>[^/]+)/(?P<repo>[^/]+)/?$",
-    re.IGNORECASE,
-)
-REPO_SSH_RE = re.compile(
-    r"^git@github\.com:(?P<owner>[^/]+)/(?P<repo>[^/]+)$",
-    re.IGNORECASE,
-)
-REPO_SLUG_RE = re.compile(r"^(?P<owner>[^/\s]+)/(?P<repo>[^/\s]+)$")
 STRAVA_HOST_RE = re.compile(r"(^|\.)strava\.com$", re.IGNORECASE)
 GARMIN_CONNECT_HOST_RE = re.compile(r"(^|\.)connect\.garmin\.com$", re.IGNORECASE)
 TRUTHY_BOOL_TEXT = {"1", "true", "yes", "y", "on"}
@@ -328,31 +324,7 @@ def _assert_actions_secret_access(repo: str) -> None:
 
 
 def _normalize_repo_slug(value: Optional[str]) -> Optional[str]:
-    if not value:
-        return None
-    raw = value.strip()
-    if not raw:
-        return None
-
-    m = REPO_URL_RE.match(raw)
-    if m:
-        repo = m.group("repo")
-        if repo.endswith(".git"):
-            repo = repo[:-4]
-        return f"{m.group('owner')}/{repo}"
-
-    m = REPO_SSH_RE.match(raw)
-    if m:
-        repo = m.group("repo")
-        if repo.endswith(".git"):
-            repo = repo[:-4]
-        return f"{m.group('owner')}/{repo}"
-
-    m = REPO_SLUG_RE.match(raw)
-    if m:
-        return f"{m.group('owner')}/{m.group('repo')}"
-
-    return None
+    return _shared_normalize_repo_slug(value)
 
 
 def _repo_slug_from_git() -> Optional[str]:
@@ -705,35 +677,11 @@ def _parse_iso8601_utc(value: str) -> Optional[datetime]:
 
 
 def _pages_url_from_slug(slug: str) -> str:
-    owner, repo = slug.split("/", 1)
-    if repo.lower() == f"{owner.lower()}.github.io":
-        return f"https://{owner}.github.io/"
-    return f"https://{owner}.github.io/{repo}/"
+    return _shared_pages_url_from_slug(slug)
 
 
 def _normalize_dashboard_url(value: str) -> str:
-    raw = str(value or "").strip()
-    if not raw:
-        return ""
-    if not re.match(r"^[a-z][a-z0-9+.-]*://", raw, flags=re.IGNORECASE):
-        raw = f"https://{raw.lstrip('/')}"
-
-    parsed = urllib.parse.urlparse(raw)
-    scheme = str(parsed.scheme or "").lower()
-    if scheme not in {"http", "https"}:
-        return ""
-
-    host = str(parsed.netloc or "").strip()
-    if not host:
-        return ""
-
-    path = str(parsed.path or "/")
-    if not path.startswith("/"):
-        path = f"/{path}"
-    if not path.endswith("/") and not parsed.query:
-        path = f"{path}/"
-
-    return urllib.parse.urlunparse((scheme, host, path, "", parsed.query, ""))
+    return _shared_normalize_dashboard_url(value)
 
 
 def _dashboard_url_from_pages_api(repo: str) -> Optional[str]:

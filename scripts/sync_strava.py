@@ -11,7 +11,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 
-from activity_types import featured_types_from_config
+from sync_scope import (
+    activity_scope_from_config,
+    activity_start_ts,
+    start_after_ts,
+)
 from utils import ensure_dir, load_config, raw_activity_dir, read_json, utc_now, write_json
 
 TOKEN_CACHE = ".strava_token.json"
@@ -341,71 +345,17 @@ def _fetch_athlete(token: str, limiter: Optional[RateLimiter]) -> Dict:
     )
 
 
-def _lookback_after_ts(years: int) -> int:
-    now = datetime.now(timezone.utc)
-    try:
-        start = now.replace(year=now.year - years)
-    except ValueError:
-        # handle Feb 29
-        start = now.replace(month=2, day=28, year=now.year - years)
-    return int(start.timestamp())
-
-
 def _start_after_ts(config: Dict) -> int:
-    sync_cfg = config.get("sync", {})
-    start_date = sync_cfg.get("start_date")
-    if start_date:
-        dt = datetime.strptime(start_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
-        return int(dt.timestamp())
-    lookback_years = sync_cfg.get("lookback_years")
-    if lookback_years in (None, ""):
-        # Default: no lower bound, so Strava backfill can reach all available history.
-        return 0
-    return _lookback_after_ts(int(lookback_years))
+    # Default behavior remains "no lower bound" when lookback/start are unset.
+    return start_after_ts(config)
 
 
 def _activity_scope(config: Dict) -> Dict:
-    activities_cfg = config.get("activities", {}) or {}
-    include_all_types = bool(activities_cfg.get("include_all_types", True))
-    exclude_types = sorted({str(item) for item in (activities_cfg.get("exclude_types", []) or [])})
-    scope = {
-        "include_all_types": include_all_types,
-        "exclude_types": exclude_types,
-    }
-    if include_all_types:
-        return scope
-
-    featured_types = sorted({str(item) for item in featured_types_from_config(activities_cfg)})
-    type_aliases = {
-        str(source): str(target)
-        for source, target in (activities_cfg.get("type_aliases", {}) or {}).items()
-    }
-    group_aliases = {
-        str(source): str(target)
-        for source, target in (activities_cfg.get("group_aliases", {}) or {}).items()
-    }
-    scope.update(
-        {
-            "featured_types": featured_types,
-            "group_other_types": bool(activities_cfg.get("group_other_types", True)),
-            "other_bucket": str(activities_cfg.get("other_bucket", "OtherSports")),
-            "type_aliases": dict(sorted(type_aliases.items())),
-            "group_aliases": dict(sorted(group_aliases.items())),
-        }
-    )
-    return scope
+    return activity_scope_from_config(config)
 
 
 def _activity_start_ts(activity: Dict) -> Optional[int]:
-    value = activity.get("start_date") or activity.get("start_date_local")
-    if not value:
-        return None
-    if value.endswith("Z"):
-        value = value[:-1] + "+00:00"
-    try:
-        return int(datetime.fromisoformat(value).timestamp())
-    except ValueError:
-        return None
+    return activity_start_ts(activity)
 
 
 def _fetch_page(
