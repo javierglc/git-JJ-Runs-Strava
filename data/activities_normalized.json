@@ -15455,5 +15455,18 @@
     "start_date_local": "2026-02-19T16:45:50Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-02-20",
+    "distance": 10005.0,
+    "elevation_gain": 9.0,
+    "id": "17464049426",
+    "moving_time": 3918.0,
+    "name": "Carrera por la tarde",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-02-20T17:39:39Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
