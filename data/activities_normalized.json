@@ -15520,5 +15520,18 @@
     "start_date_local": "2026-02-25T07:12:04Z",
     "type": "WeightTraining",
     "year": 2026
+  },
+  {
+    "date": "2026-02-26",
+    "distance": 12012.0,
+    "elevation_gain": 46.0,
+    "id": "17526800128",
+    "moving_time": 3870.0,
+    "name": "Carrera por la ma\u00f1ana",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-02-26T07:11:05Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
