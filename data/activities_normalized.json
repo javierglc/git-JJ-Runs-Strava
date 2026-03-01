@@ -15559,5 +15559,31 @@
     "start_date_local": "2026-02-27T13:07:07Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-03-01",
+    "distance": 13005.0,
+    "elevation_gain": 59.0,
+    "id": "17564121718",
+    "moving_time": 4286.0,
+    "name": "Carrera a la hora del almuerzo",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-01T12:15:53Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-03-01",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "17564719609",
+    "moving_time": 964.0,
+    "name": "Yoga a la tarde",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-03-01T13:55:11Z",
+    "type": "Yoga",
+    "year": 2026
   }
 ]
