@@ -15585,5 +15585,31 @@
     "start_date_local": "2026-03-01T13:55:11Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-03-02",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "17572845170",
+    "moving_time": 4731.0,
+    "name": "Entrenamiento con pesas matutino",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-03-02T07:31:06Z",
+    "type": "WeightTraining",
+    "year": 2026
+  },
+  {
+    "date": "2026-03-02",
+    "distance": 9015.4,
+    "elevation_gain": 32.0,
+    "id": "17577845595",
+    "moving_time": 3044.0,
+    "name": "Carrera por la tarde",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-02T17:04:20Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
