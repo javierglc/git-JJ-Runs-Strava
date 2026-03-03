@@ -8406,6 +8406,13 @@
       "subtype": "Run",
       "type": "Run",
       "year": 2026
+    },
+    {
+      "date": "2026-03-03",
+      "hour": 16,
+      "subtype": "Run",
+      "type": "Run",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -18483,6 +18490,15 @@
           "distance": 9015.4,
           "elevation_gain": 32.0,
           "moving_time": 3044.0
+        },
+        "2026-03-03": {
+          "activity_ids": [
+            "17589478467"
+          ],
+          "count": 1,
+          "distance": 9005.5,
+          "elevation_gain": 0.0,
+          "moving_time": 2605.0
         }
       },
       "WeightTraining": {
@@ -18761,7 +18777,7 @@
       }
     }
   },
-  "generated_at": "2026-03-02T17:32:59.144168+00:00",
+  "generated_at": "2026-03-03T17:31:15.152794+00:00",
   "other_bucket": "OtherSports",
   "repo": "javierglc/git-JJ-Runs-Strava",
   "source": "strava",
