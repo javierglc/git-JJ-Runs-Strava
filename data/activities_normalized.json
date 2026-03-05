@@ -15624,5 +15624,18 @@
     "start_date_local": "2026-03-03T16:15:15Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-03-05",
+    "distance": 11013.0,
+    "elevation_gain": 44.0,
+    "id": "17614639541",
+    "moving_time": 3655.0,
+    "name": "Carrera por la tarde",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-05T16:12:00Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
