@@ -15767,5 +15767,18 @@
     "start_date_local": "2026-03-14T09:47:52Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-03-15",
+    "distance": 7867.0,
+    "elevation_gain": 11.0,
+    "id": "17730440244",
+    "moving_time": 2988.0,
+    "name": "Carrera a la hora del almuerzo",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-15T11:18:37Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
