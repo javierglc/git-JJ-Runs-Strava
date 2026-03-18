@@ -15806,5 +15806,18 @@
     "start_date_local": "2026-03-16T18:15:03Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-03-18",
+    "distance": 9013.0,
+    "elevation_gain": 0.0,
+    "id": "17765174064",
+    "moving_time": 2674.0,
+    "name": "Mahlzeit",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-18T11:38:03Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
