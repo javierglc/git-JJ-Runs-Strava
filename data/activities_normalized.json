@@ -15871,5 +15871,18 @@
     "start_date_local": "2026-03-21T08:05:54Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-03-22",
+    "distance": 4395.8,
+    "elevation_gain": 124.0,
+    "id": "17813283133",
+    "moving_time": 2221.0,
+    "name": "Sch\u00f6nator 2026",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-22T11:08:14Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
