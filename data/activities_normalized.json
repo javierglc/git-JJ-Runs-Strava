@@ -15936,5 +15936,18 @@
     "start_date_local": "2026-03-27T15:34:28Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-03-28",
+    "distance": 8010.0,
+    "elevation_gain": 22.0,
+    "id": "17884419904",
+    "moving_time": 2594.0,
+    "name": "Carrera por la ma\u00f1ana",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-03-28T08:09:10Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
