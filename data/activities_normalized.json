@@ -15988,5 +15988,31 @@
     "start_date_local": "2026-04-01T16:23:06Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-02",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "17951135092",
+    "moving_time": 2270.0,
+    "name": "Entrenamiento con pesas a la tarde",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-04-02T15:29:49Z",
+    "type": "WeightTraining",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-02",
+    "distance": 9032.0,
+    "elevation_gain": 33.0,
+    "id": "17951135208",
+    "moving_time": 3264.0,
+    "name": "Carrera por la tarde",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-02T16:15:18Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
