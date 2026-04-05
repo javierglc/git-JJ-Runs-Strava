@@ -16053,5 +16053,31 @@
     "start_date_local": "2026-04-04T09:39:32Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-05",
+    "distance": 1380.0,
+    "elevation_gain": 82.0,
+    "id": "17988216380",
+    "moving_time": 1512.0,
+    "name": "Senderismo a la hora del almuerzo",
+    "raw_activity_type": "Hike",
+    "raw_type": "Hike",
+    "start_date_local": "2026-04-05T11:46:15Z",
+    "type": "Hike",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-05",
+    "distance": 8369.0,
+    "elevation_gain": 179.0,
+    "id": "17988219109",
+    "moving_time": 7270.0,
+    "name": "Senderismo a la hora del almuerzo",
+    "raw_activity_type": "Hike",
+    "raw_type": "Hike",
+    "start_date_local": "2026-04-05T12:35:29Z",
+    "type": "Hike",
+    "year": 2026
   }
 ]
