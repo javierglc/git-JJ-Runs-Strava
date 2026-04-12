@@ -16183,5 +16183,18 @@
     "start_date_local": "2026-04-11T07:45:48Z",
     "type": "WeightTraining",
     "year": 2026
+  },
+  {
+    "date": "2026-04-12",
+    "distance": 21026.3,
+    "elevation_gain": 22.0,
+    "id": "18075657243",
+    "moving_time": 5149.0,
+    "name": "Landshut L\u00e4uft 21k 2026",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-12T09:30:47Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
