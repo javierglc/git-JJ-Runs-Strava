@@ -16196,5 +16196,31 @@
     "start_date_local": "2026-04-12T09:30:47Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-13",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18093694023",
+    "moving_time": 2175.0,
+    "name": "Yoga vespertino",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-04-13T18:27:51Z",
+    "type": "Yoga",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-14",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18101429411",
+    "moving_time": 3436.0,
+    "name": "Entrenamiento con pesas matutino",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-04-14T06:41:27Z",
+    "type": "WeightTraining",
+    "year": 2026
   }
 ]
