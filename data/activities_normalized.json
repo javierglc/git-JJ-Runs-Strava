@@ -16274,5 +16274,31 @@
     "start_date_local": "2026-04-18T12:30:05Z",
     "type": "TrailRun",
     "year": 2026
+  },
+  {
+    "date": "2026-04-20",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18180228324",
+    "moving_time": 4065.0,
+    "name": "Entrenamiento con pesas matutino",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-04-20T07:05:14Z",
+    "type": "WeightTraining",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-20",
+    "distance": 9008.0,
+    "elevation_gain": 33.0,
+    "id": "18180709092",
+    "moving_time": 2923.0,
+    "name": "Carrera por la ma\u00f1ana",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-20T08:43:41Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
