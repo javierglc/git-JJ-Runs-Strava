@@ -16300,5 +16300,31 @@
     "start_date_local": "2026-04-20T08:43:41Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-04-27",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18280994671",
+    "moving_time": 1274.0,
+    "name": "Yoga vespertino",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-04-27T18:42:50Z",
+    "type": "Yoga",
+    "year": 2026
+  },
+  {
+    "date": "2026-04-28",
+    "distance": 9003.3,
+    "elevation_gain": 38.0,
+    "id": "18293238581",
+    "moving_time": 3007.0,
+    "name": "Carrera por la tarde",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-04-28T16:22:05Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
