@@ -16365,5 +16365,31 @@
     "start_date_local": "2026-05-05T07:31:18Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-05-06",
+    "distance": 12002.0,
+    "elevation_gain": 41.0,
+    "id": "18394962272",
+    "moving_time": 3966.0,
+    "name": "Carrera por la ma\u00f1ana",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-06T07:05:39Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-06",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18395326395",
+    "moving_time": 1336.0,
+    "name": "Yoga matutino",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-05-06T08:43:17Z",
+    "type": "Yoga",
+    "year": 2026
   }
 ]
