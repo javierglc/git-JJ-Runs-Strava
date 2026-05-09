@@ -16417,5 +16417,18 @@
     "start_date_local": "2026-05-08T09:00:47Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-05-09",
+    "distance": 12008.7,
+    "elevation_gain": 49.0,
+    "id": "18435471659",
+    "moving_time": 3909.0,
+    "name": "Carrera por la ma\u00f1ana",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-09T10:31:32Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
