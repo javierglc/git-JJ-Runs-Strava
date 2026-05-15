@@ -16495,5 +16495,18 @@
     "start_date_local": "2026-05-14T12:06:02Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-05-15",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18512808271",
+    "moving_time": 3946.0,
+    "name": "Entrenamiento con pesas matutino",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-05-15T07:17:48Z",
+    "type": "WeightTraining",
+    "year": 2026
   }
 ]
