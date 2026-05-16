@@ -16508,5 +16508,44 @@
     "start_date_local": "2026-05-15T07:17:48Z",
     "type": "WeightTraining",
     "year": 2026
+  },
+  {
+    "date": "2026-05-15",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18519600001",
+    "moving_time": 1267.0,
+    "name": "Yoga vespertino",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-05-15T19:10:47Z",
+    "type": "Yoga",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-16",
+    "distance": 6011.0,
+    "elevation_gain": 29.0,
+    "id": "18524856133",
+    "moving_time": 2082.0,
+    "name": "Carrera por la ma\u00f1ana",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-16T08:42:30Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-05-16",
+    "distance": 4350.0,
+    "elevation_gain": 16.0,
+    "id": "18526907444",
+    "moving_time": 776.0,
+    "name": "Vuelta ciclista a la hora del almuerzo",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-05-16T12:01:56Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
