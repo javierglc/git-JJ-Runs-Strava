@@ -16547,5 +16547,18 @@
     "start_date_local": "2026-05-16T12:01:56Z",
     "type": "Ride",
     "year": 2026
+  },
+  {
+    "date": "2026-05-17",
+    "distance": 21235.0,
+    "elevation_gain": 54.0,
+    "id": "18539963298",
+    "moving_time": 5145.0,
+    "name": "Regensburg Halbmarathon 2026",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-17T08:40:52Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
