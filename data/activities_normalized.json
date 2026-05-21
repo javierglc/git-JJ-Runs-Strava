@@ -16573,5 +16573,18 @@
     "start_date_local": "2026-05-19T07:11:36Z",
     "type": "WeightTraining",
     "year": 2026
+  },
+  {
+    "date": "2026-05-21",
+    "distance": 10781.4,
+    "elevation_gain": 47.0,
+    "id": "18598025446",
+    "moving_time": 4377.0,
+    "name": "Carrera por la tarde",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-05-21T17:14:25Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
