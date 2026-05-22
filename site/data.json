@@ -8931,6 +8931,13 @@
       "subtype": "Run",
       "type": "Run",
       "year": 2026
+    },
+    {
+      "date": "2026-05-22",
+      "hour": 7,
+      "subtype": "Run",
+      "type": "Run",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -19429,6 +19436,15 @@
           "distance": 10781.4,
           "elevation_gain": 47.0,
           "moving_time": 4377.0
+        },
+        "2026-05-22": {
+          "activity_ids": [
+            "18604478662"
+          ],
+          "count": 1,
+          "distance": 10008.5,
+          "elevation_gain": 38.0,
+          "moving_time": 3497.0
         }
       },
       "TrailRun": {
@@ -19961,7 +19977,7 @@
       }
     }
   },
-  "generated_at": "2026-05-21T17:31:31.377858+00:00",
+  "generated_at": "2026-05-22T17:10:13.595373+00:00",
   "other_bucket": "OtherSports",
   "repo": "javierglc/git-JJ-Runs-Strava",
   "source": "strava",
