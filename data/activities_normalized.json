@@ -16599,5 +16599,18 @@
     "start_date_local": "2026-05-22T07:31:39Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-05-23",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "18616709836",
+    "moving_time": 1509.0,
+    "name": "Yoga matutino",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-05-23T07:26:49Z",
+    "type": "Yoga",
+    "year": 2026
   }
 ]
