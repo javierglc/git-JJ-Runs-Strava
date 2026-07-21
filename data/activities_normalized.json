@@ -17444,5 +17444,57 @@
     "start_date_local": "2026-07-20T17:01:04Z",
     "type": "Run",
     "year": 2026
+  },
+  {
+    "date": "2026-07-20",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "19391005202",
+    "moving_time": 2326.0,
+    "name": "Evening Weight Training",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-07-20T18:05:44Z",
+    "type": "WeightTraining",
+    "year": 2026
+  },
+  {
+    "date": "2026-07-21",
+    "distance": 13005.2,
+    "elevation_gain": 0.0,
+    "id": "19398317508",
+    "moving_time": 3834.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-07-21T07:09:53Z",
+    "type": "Run",
+    "year": 2026
+  },
+  {
+    "date": "2026-07-21",
+    "distance": 5490.5,
+    "elevation_gain": 45.0,
+    "id": "19403537384",
+    "moving_time": 979.0,
+    "name": "Afternoon Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-07-21T15:37:13Z",
+    "type": "Ride",
+    "year": 2026
+  },
+  {
+    "date": "2026-07-21",
+    "distance": 3067.0,
+    "elevation_gain": 5.0,
+    "id": "19403943291",
+    "moving_time": 570.0,
+    "name": "Afternoon Ride",
+    "raw_activity_type": "Ride",
+    "raw_type": "Ride",
+    "start_date_local": "2026-07-21T16:14:56Z",
+    "type": "Ride",
+    "year": 2026
   }
 ]
