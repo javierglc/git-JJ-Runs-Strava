@@ -9428,6 +9428,13 @@
       "subtype": "Run",
       "type": "Run",
       "year": 2026
+    },
+    {
+      "date": "2026-07-24",
+      "hour": 9,
+      "subtype": "Hike",
+      "type": "Hike",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -19245,6 +19252,15 @@
           "distance": 9749.0,
           "elevation_gain": 261.0,
           "moving_time": 8782.0
+        },
+        "2026-07-24": {
+          "activity_ids": [
+            "19446895028"
+          ],
+          "count": 1,
+          "distance": 10902.8,
+          "elevation_gain": 1014.0,
+          "moving_time": 14801.0
         }
       },
       "Ride": {
@@ -21093,7 +21109,7 @@
       }
     }
   },
-  "generated_at": "2026-07-23T16:37:40.135808+00:00",
+  "generated_at": "2026-07-24T16:44:31.434028+00:00",
   "other_bucket": "OtherSports",
   "repo": "javierglc/git-JJ-Runs-Strava",
   "source": "strava",
