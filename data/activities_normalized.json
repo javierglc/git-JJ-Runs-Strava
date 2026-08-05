@@ -17678,5 +17678,18 @@
     "start_date_local": "2026-08-04T09:13:44Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-08-05",
+    "distance": 17005.5,
+    "elevation_gain": 41.0,
+    "id": "19607954313",
+    "moving_time": 5219.0,
+    "name": "Morning Run",
+    "raw_activity_type": "Run",
+    "raw_type": "Run",
+    "start_date_local": "2026-08-05T07:01:30Z",
+    "type": "Run",
+    "year": 2026
   }
 ]
