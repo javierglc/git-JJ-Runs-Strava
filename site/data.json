@@ -9932,6 +9932,13 @@
       "subtype": "Run",
       "type": "Run",
       "year": 2026
+    },
+    {
+      "date": "2026-10-01",
+      "hour": 8,
+      "subtype": "Yoga",
+      "type": "Yoga",
+      "year": 2026
     }
   ],
   "aggregates": {
@@ -22241,11 +22248,20 @@
           "distance": 0.0,
           "elevation_gain": 0.0,
           "moving_time": 1237.0
+        },
+        "2026-10-01": {
+          "activity_ids": [
+            "20403064823"
+          ],
+          "count": 1,
+          "distance": 0.0,
+          "elevation_gain": 0.0,
+          "moving_time": 1033.0
         }
       }
     }
   },
-  "generated_at": "2026-09-30T19:53:21.649817+00:00",
+  "generated_at": "2026-10-01T20:11:38.299455+00:00",
   "other_bucket": "OtherSports",
   "repo": "javierglc/git-JJ-Runs-Strava",
   "source": "strava",
