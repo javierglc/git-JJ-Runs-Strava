@@ -18484,5 +18484,18 @@
     "start_date_local": "2026-10-15T07:50:42Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-10-17",
+    "distance": 5807.4,
+    "elevation_gain": 1224.0,
+    "id": "20626868585",
+    "moving_time": 11103.0,
+    "name": "Morning Hike",
+    "raw_activity_type": "Hike",
+    "raw_type": "Hike",
+    "start_date_local": "2026-10-17T09:09:39Z",
+    "type": "Hike",
+    "year": 2026
   }
 ]
