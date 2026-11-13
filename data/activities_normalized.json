@@ -18640,5 +18640,31 @@
     "start_date_local": "2026-11-11T19:12:20Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-11-13",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "20968342376",
+    "moving_time": 613.0,
+    "name": "Morning Workout",
+    "raw_activity_type": "StairStepper",
+    "raw_type": "StairStepper",
+    "start_date_local": "2026-11-13T07:27:57Z",
+    "type": "StairStepper",
+    "year": 2026
+  },
+  {
+    "date": "2026-11-13",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "20968342428",
+    "moving_time": 3222.0,
+    "name": "Morning Weight Training",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-11-13T06:32:23Z",
+    "type": "WeightTraining",
+    "year": 2026
   }
 ]
