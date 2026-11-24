@@ -18744,5 +18744,31 @@
     "start_date_local": "2026-11-22T08:23:43Z",
     "type": "Yoga",
     "year": 2026
+  },
+  {
+    "date": "2026-11-23",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "21091518855",
+    "moving_time": 3551.0,
+    "name": "Morning Weight Training",
+    "raw_activity_type": "WeightTraining",
+    "raw_type": "WeightTraining",
+    "start_date_local": "2026-11-23T06:26:38Z",
+    "type": "WeightTraining",
+    "year": 2026
+  },
+  {
+    "date": "2026-11-23",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "21097760456",
+    "moving_time": 1567.0,
+    "name": "Evening Yoga",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-11-23T18:45:20Z",
+    "type": "Yoga",
+    "year": 2026
   }
 ]
