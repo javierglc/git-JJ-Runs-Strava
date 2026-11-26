@@ -18783,5 +18783,18 @@
     "start_date_local": "2026-11-25T07:04:12Z",
     "type": "WeightTraining",
     "year": 2026
+  },
+  {
+    "date": "2026-11-26",
+    "distance": 0.0,
+    "elevation_gain": 0.0,
+    "id": "21128077841",
+    "moving_time": 989.0,
+    "name": "Morning Yoga",
+    "raw_activity_type": "Yoga",
+    "raw_type": "Yoga",
+    "start_date_local": "2026-11-26T07:49:50Z",
+    "type": "Yoga",
+    "year": 2026
   }
 ]
